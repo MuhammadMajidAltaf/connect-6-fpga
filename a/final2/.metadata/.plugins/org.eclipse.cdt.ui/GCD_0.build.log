@@ -1,0 +1,35 @@
+
+**** Build of configuration Debug for project GCD_0 ****
+
+make all 
+Building file: ../src/gcd.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -Wl,--no-relax -I../../GCD_bsp_0/microblaze_0/include -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.30.a -mno-xl-soft-mul -MMD -MP -MF"src/gcd.d" -MT"src/gcd.d" -o"src/gcd.o" "../src/gcd.c"
+../src/gcd.c: In function 'main':
+../src/gcd.c:120:12: warning: suggest parentheses around comparison in operand of '&' [-Wparentheses]
+Finished building: ../src/gcd.c
+' '
+Building target: GCD_0.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,--no-relax -Wl,-T -Wl,../src/lscript.ld -L../../GCD_bsp_0/microblaze_0/lib -mxl-barrel-shift -mxl-pattern-compare -mcpu=v8.30.a -mno-xl-soft-mul -o"GCD_0.elf"  ./src/gcd.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: GCD_0.elf
+' '
+Invoking: MicroBlaze Print Size
+mb-size GCD_0.elf  |tee "GCD_0.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  27708	   1364	   2160	  31232	   7a00	GCD_0.elf
+Finished building: GCD_0.elf.size
+' '
+Invoking: Xilinx ELF Check
+elfcheck GCD_0.elf -hw ../../final_hw_platform/system.xml -pe microblaze_0  |tee "GCD_0.elf.elfcheck"
+elfcheck
+Xilinx EDK 14.4 Build EDK_P.49d
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: elfcheck -hw ../../final_hw_platform/system.xml -pe microblaze_0
+GCD_0.elf 
+
+ELF file	: GCD_0.elf
+elfcheck passed.
+Finished building: GCD_0.elf.elfcheck
+' '
